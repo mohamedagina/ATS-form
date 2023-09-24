@@ -1,7 +1,12 @@
+import { SideBar } from './components';
 import './App.css';
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <>
+      <SideBar />
+    </>
+  );
 }
 
 export default App;

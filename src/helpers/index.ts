@@ -1,0 +1,1 @@
+export { getImagePlaceholder } from './string';
