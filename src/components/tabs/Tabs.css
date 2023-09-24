@@ -1,0 +1,65 @@
+.tabs-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-start: var(--sidebar-width);
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-secondary);
+}
+
+.tabs-list > li {
+  position: relative;
+  flex: 1;
+}
+
+.tab-link {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 3rem 1rem;
+  transition-duration: 0.3s;
+  transition-property: color, background-color;
+}
+
+.tab-link:is(.active, :hover) {
+  background-color: var(--clr-active-tab);
+  color: #fff;
+}
+
+.tab-link:not(.active):hover {
+  opacity: 0.9;
+}
+
+.tab-link.active::after {
+  content: '';
+  position: absolute;
+  inset-inline-end: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1.25rem 0 1.25rem 1.25rem;
+  border-color: transparent transparent transparent var(--clr-active-tab);
+  transform: translateX(100%);
+}
+
+.tabs-list li:last-child .tab-link.active::after {
+  inset-inline-end: auto;
+  inset-inline-start: 0;
+  transform: translateX(-100%) scaleX(-1);
+}
+
+.tab-link:not(.active)::before {
+  content: '';
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block: 0;
+  width: 1px;
+  margin-block: 1rem;
+  background-color: var(--clr-text-secondary);
+  opacity: 0.4;
+}
+
+.tabs-list li:last-child .tab-link::before {
+  opacity: 0;
+}
