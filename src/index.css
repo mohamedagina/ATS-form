@@ -1,0 +1,71 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+a,
+button,
+input {
+  color: inherit;
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --clr-text-primary: #000000;
+  --clr-text-secondary: #979797;
+  --clr-active-link: #1d4ed8;
+  --clr-header: #d0f7fa;
+  --clr-active-tab: #00635b;
+  --clr-active-option: #9c4de2;
+  --clr-success: #087b2f;
+  --clr-danger: #a80000;
+  --clr-disabled: #f4f4f4;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+}
+
+body {
+  font: var(--font-weight-semi-bold) 1.25rem / 1 var(--font-primary);
+  color: var(--clr-text-primary);
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.burger-btn {
+  background-color: transparent;
+  border: none;
+}
