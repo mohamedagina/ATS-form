@@ -40,12 +40,14 @@ ul {
   --clr-success: #087b2f;
   --clr-danger: #a80000;
   --clr-disabled: #f4f4f4;
+  --clr-background: #ffffff;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
   --font-primary: 'Poppins', sans-serif;
   --font-secondary: 'Inter', sans-serif;
+  --sidebar-width: 5.75rem;
 }
 
 body {

@@ -1,0 +1,14 @@
+.content-page {
+  padding: 7rem 0 3rem;
+}
+
+.tab-content {
+  display: flexbox;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 7rem 4rem 0 calc(var(--sidebar-width) + 4rem);
+}
+
+.unfinished-component {
+  text-align: center;
+}
