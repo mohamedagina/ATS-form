@@ -13,7 +13,7 @@ import { getImagePlaceholder } from '../../helpers';
 import './SideBar.css';
 
 const navLinks = [
-  { path: '/dashboard', title: 'Dashboard', icon: <HomeOutlined /> },
+  { path: '/', title: 'Home', icon: <HomeOutlined /> },
   { path: '/todo', title: 'Todo', icon: <ScheduleOutlined /> }
 ];
 
