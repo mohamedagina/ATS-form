@@ -12,7 +12,7 @@ import { Panel } from '..';
 export const CoverUpload = () => {
   const [file, setFile] = useState<File | undefined>();
   const image = useSelector((state: RootState) => {
-    const cover = state.application.data.attributes?.coverImage;
+    const cover = state.application.data?.attributes?.coverImage;
     if (cover === 'http://example.com') return '';
     return cover;
   });
@@ -21,7 +21,7 @@ export const CoverUpload = () => {
 
   useEffect(() => {
     const dropZoneEl = dropZone.current as null | HTMLElement;
-    if (file || !dropZoneEl) return;
+    if (!dropZoneEl) return;
 
     const handleInDropZone = (e: DragEvent) => {
       e.preventDefault();

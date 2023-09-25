@@ -39,8 +39,9 @@ ul {
   --clr-active-option: #9c4de2;
   --clr-success: #087b2f;
   --clr-danger: #a80000;
-  --clr-disabled: #f4f4f4;
+  --clr-disabled: #cccccc;
   --clr-background: #ffffff;
+  --clr-divider: #c4c4c4;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semi-bold: 600;
@@ -70,4 +71,15 @@ ul {
 .burger-btn {
   background-color: transparent;
   border: none;
+}
+
+.ant-switch {
+  transform: scaleX(-1);
+  border: 1px solid var(--clr-disabled);
+  height: 1.5rem;
+  background-color: var(--clr-background);
+}
+
+.ant-switch:not(.ant-switch-disabled):hover {
+  background-color: var(--clr-divider);
 }

@@ -1,4 +1,4 @@
-type PersonalBasicQuestion = {
+export type PersonalBasicQuestion = {
   internalUse: boolean;
   show: boolean;
 };
@@ -11,7 +11,7 @@ export type AdditionalQuestion = {
   maxChoice?: number;
   disqualify?: boolean;
   other?: boolean;
-  durationUnit?: 'm' | 's';
+  durationUnit?: 'minute' | 'second';
   duration?: number;
   description?: string;
 };
@@ -29,7 +29,7 @@ interface PersonalInfo {
   personalQuestions: AdditionalQuestion[];
 }
 
-type profileBasicQuestion = {
+export type profileBasicQuestion = {
   mandatory: boolean;
   show: boolean;
 };
@@ -51,3 +51,9 @@ export interface Application {
     customisedQuestions: AdditionalQuestion[];
   };
 }
+
+export type SummaryOptions = {
+  show: boolean;
+  mandatory?: boolean;
+  internalUse?: boolean;
+};

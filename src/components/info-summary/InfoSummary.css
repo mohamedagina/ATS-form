@@ -1,0 +1,30 @@
+.info-summary {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  padding: 1.5rem 0;
+}
+
+.info-summary:not(:first-child) {
+  border-top: 1px solid var(--clr-divider);
+}
+
+.info-summary label {
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-regular);
+}
+
+.info-options {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.switch-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 6rem;
+  cursor: pointer;
+  color: var(--clr-text-secondary);
+}
