@@ -39,7 +39,7 @@ export const updateCover = createAsyncThunk(
 );
 
 export const deleteCover = createAsyncThunk(
-  'application/update',
+  'application/updateCover',
   async (_, { getState }) => {
     const coverTempURL = 'http://example.com';
 
@@ -77,7 +77,7 @@ type UpdateInfoArgs = {
 };
 
 export const updateInformation = createAsyncThunk(
-  'application/update',
+  'application/updateInfo',
   async ({ newInfo, category, title }: UpdateInfoArgs, { getState }) => {
     const state = getState() as RootState;
     const currentApplication = state.application.data;

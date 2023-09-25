@@ -72,7 +72,7 @@ const applicationSlice = createSlice({
   },
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchApplication.pending, (state, action) => {
+    builder.addCase(fetchApplication.pending, state => {
       state.isLoading = true;
     });
     builder.addCase(fetchApplication.fulfilled, (state, action) => {
