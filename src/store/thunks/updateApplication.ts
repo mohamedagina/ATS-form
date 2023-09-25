@@ -4,7 +4,7 @@ import { message } from 'antd';
 import { SummaryOptions } from '../../models';
 
 export const updateCover = createAsyncThunk(
-  'application/update',
+  'application/updateCover',
   async (newCover: File, { getState }) => {
     //here I just sent a blob url because I can not send the real file
     const coverTempURL = (window.URL || window.webkitURL).createObjectURL(
@@ -39,7 +39,7 @@ export const updateCover = createAsyncThunk(
 );
 
 export const deleteCover = createAsyncThunk(
-  'application/updateCover',
+  'application/deleteCover',
   async (_, { getState }) => {
     const coverTempURL = 'http://example.com';
 

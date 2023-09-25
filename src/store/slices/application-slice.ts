@@ -1,5 +1,10 @@
 import { SerializedError, createSlice } from '@reduxjs/toolkit';
-import { fetchApplication, updateCover, updateInformation } from '../';
+import {
+  fetchApplication,
+  updateCover,
+  updateInformation,
+  deleteCover
+} from '../';
 import { Application } from '../../models';
 
 const applicationSlice = createSlice({
@@ -92,6 +97,18 @@ const applicationSlice = createSlice({
       state.data = action.payload;
     });
     builder.addCase(updateCover.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.error;
+    });
+
+    builder.addCase(deleteCover.pending, state => {
+      state.isLoading = true;
+    });
+    builder.addCase(deleteCover.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data = action.payload;
+    });
+    builder.addCase(deleteCover.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.error;
     });
