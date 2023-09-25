@@ -81,6 +81,8 @@ export const CoverUpload = () => {
   const handleDelete = () => {
     setFile(undefined);
     dispatch(deleteCover());
+    const inputEl = document.getElementById('cover-upload') as HTMLInputElement;
+    inputEl.value = '';
   };
 
   return (
