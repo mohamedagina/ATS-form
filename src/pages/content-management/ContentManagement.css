@@ -12,3 +12,12 @@
 .unfinished-component {
   text-align: center;
 }
+
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.information-panel {
+  padding: 2.5rem 2rem;
+}
