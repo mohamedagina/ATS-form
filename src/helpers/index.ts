@@ -1,1 +1,2 @@
-export { getImagePlaceholder } from './string';
+export * from './string';
+export * from './validations';

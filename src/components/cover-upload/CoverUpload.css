@@ -1,0 +1,67 @@
+.cover-upload {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 3.5rem;
+  margin: 4rem 2.5rem;
+  font-size: 0.875rem;
+  border: 1px dashed var(--clr-text-primary);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.cover-upload.active::after {
+  content: 'Drop an image here';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-items: center;
+  background-color: var(--clr-background);
+  border-radius: inherit;
+}
+
+.cover-upload:hover {
+  border-color: var(--clr-active-link);
+}
+
+.cover-upload.hidden {
+  display: none;
+}
+
+.cover-upload .anticon {
+  align-self: center;
+  font-size: 2rem;
+}
+
+.upload-hint {
+  font-weight: var(--font-weight-medium);
+  color: var(--clr-text-secondary);
+}
+
+#cover-upload {
+  display: none;
+}
+
+.cover-container > img {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.delete-reupload {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  font-size: 0.9375rem;
+  color: var(--clr-danger);
+  border: none;
+  background-color: transparent;
+}
+
+.delete-reupload .anticon {
+  font-size: 1.5rem;
+}
