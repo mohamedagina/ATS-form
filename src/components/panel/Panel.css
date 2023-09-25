@@ -1,0 +1,13 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: min(37rem, 100%);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 3px 3px 14px 0px rgba(190, 190, 190, 0.3);
+}
+
+.panel > header {
+  padding: 1.5rem 2rem;
+  background-color: var(--clr-header);
+}
