@@ -45,23 +45,11 @@
   display: none;
 }
 
+.cover-container > .text-btn {
+  margin: 1.5rem;
+}
+
 .cover-container > img {
   width: 100%;
   aspect-ratio: 16/9;
-}
-
-.delete-reupload {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
-  padding: 1.5rem;
-  font-size: 0.9375rem;
-  color: var(--clr-danger);
-  border: none;
-  background-color: transparent;
-}
-
-.delete-reupload .anticon {
-  font-size: 1.5rem;
 }

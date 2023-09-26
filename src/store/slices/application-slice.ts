@@ -3,7 +3,10 @@ import {
   fetchApplication,
   updateCover,
   updateInformation,
-  deleteCover
+  deleteCover,
+  addQuestion,
+  updateQuestion,
+  deleteQuestion
 } from '../';
 import { Application } from '../../models';
 
@@ -53,7 +56,7 @@ const applicationSlice = createSlice({
             internalUse: false,
             show: true
           },
-          personalQuestions: [{ id: '', type: '', question: '' }]
+          personalQuestions: [{ id: '', type: 'Paragraph', question: '' }]
         },
         profile: {
           education: {
@@ -121,6 +124,42 @@ const applicationSlice = createSlice({
       state.data = action.payload;
     });
     builder.addCase(updateInformation.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.error;
+    });
+
+    builder.addCase(addQuestion.pending, state => {
+      state.isLoading = true;
+    });
+    builder.addCase(addQuestion.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data = action.payload;
+    });
+    builder.addCase(addQuestion.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.error;
+    });
+
+    builder.addCase(updateQuestion.pending, state => {
+      state.isLoading = true;
+    });
+    builder.addCase(updateQuestion.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data = action.payload;
+    });
+    builder.addCase(updateQuestion.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.error;
+    });
+
+    builder.addCase(deleteQuestion.pending, state => {
+      state.isLoading = true;
+    });
+    builder.addCase(deleteQuestion.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data = action.payload;
+    });
+    builder.addCase(deleteQuestion.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.error;
     });

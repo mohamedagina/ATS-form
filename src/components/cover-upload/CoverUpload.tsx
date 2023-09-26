@@ -112,7 +112,7 @@ export const CoverUpload = () => {
         <div className="cover-container">
           <img src={image} alt="Position cover" />
 
-          <button className="delete-reupload" onClick={handleDelete}>
+          <button className="danger text-btn" onClick={handleDelete}>
             <CloseOutlined /> Delete & re-upload
           </button>
         </div>

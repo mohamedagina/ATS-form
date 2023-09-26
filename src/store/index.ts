@@ -9,4 +9,6 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>;
 export * from './thunks/fetchApplication';
-export * from './thunks/updateApplication';
+export * from './thunks/updateCover';
+export * from './thunks/updateInfo';
+export * from './thunks/updateQuestions';
