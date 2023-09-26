@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { RootState } from '..';
 import { message } from 'antd';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL as string;
 export const updateCover = createAsyncThunk(
   'application/updateCover',
   async (newCover: File, { getState }) => {
@@ -18,16 +19,13 @@ export const updateCover = createAsyncThunk(
     };
 
     try {
-      await fetch(
-        'http://127.0.0.1:4010/api/918.8516051839101/programs/et/application-form',
-        {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ data: newApplication })
-        }
-      );
+      await fetch(BASE_URL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data: newApplication })
+      });
       message.success('Image updated successfully', 3);
     } catch (ex) {
       message.error("Couldn't update the image", 3);
@@ -50,16 +48,13 @@ export const deleteCover = createAsyncThunk(
     };
 
     try {
-      await fetch(
-        'http://127.0.0.1:4010/api/918.8516051839101/programs/et/application-form',
-        {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ data: newApplication })
-        }
-      );
+      await fetch(BASE_URL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data: newApplication })
+      });
       message.success('Image deleted successfully', 3);
     } catch (ex) {
       message.error("Couldn't delete the image", 3);

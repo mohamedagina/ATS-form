@@ -9,6 +9,7 @@ type UpdateInfoArgs = {
   title: string;
 };
 
+const BASE_URL = process.env.REACT_APP_BASE_URL as string;
 export const updateInformation = createAsyncThunk(
   'application/updateInfo',
   async ({ newInfo, category, title }: UpdateInfoArgs, { getState }) => {
@@ -27,16 +28,13 @@ export const updateInformation = createAsyncThunk(
     };
 
     try {
-      await fetch(
-        'http://127.0.0.1:4010/api/918.8516051839101/programs/et/application-form',
-        {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ data: newApplication })
-        }
-      );
+      await fetch(BASE_URL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data: newApplication })
+      });
       message.success(`${category} information updated successfully`, 3);
     } catch (ex) {
       message.error(`Couldn't update ${category} information`, 3);

@@ -7,6 +7,7 @@ import { ContentManagement } from './pages';
 import { useDispatch } from 'react-redux';
 import { fetchApplication } from './store';
 import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit';
+import { ConfigProvider } from 'antd';
 
 function App() {
   const dispatch = useDispatch<ThunkDispatch<any, void, AnyAction>>();
@@ -16,12 +17,18 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: '#087B2F'
+        }
+      }}
+    >
       <SideBar />
       <Routes>
         <Route path="/" element={<ContentManagement />} />
       </Routes>
-    </>
+    </ConfigProvider>
   );
 }
 

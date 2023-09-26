@@ -3,6 +3,7 @@ import { AdditionalQuestion } from '../../models';
 import { RootState } from '..';
 import { message } from 'antd';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL as string;
 export const addQuestion = createAsyncThunk(
   'application/addQuestion',
   async (
@@ -65,16 +66,13 @@ export const addQuestion = createAsyncThunk(
     } else return currentApplication;
 
     try {
-      await fetch(
-        'http://127.0.0.1:4010/api/918.8516051839101/programs/et/application-form',
-        {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ data: newApplication })
-        }
-      );
+      await fetch(BASE_URL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data: newApplication })
+      });
       message.success('New question was added successfully', 3);
     } catch (ex) {
       message.error("Couldn't Add the new question", 3);
@@ -143,16 +141,13 @@ export const updateQuestion = createAsyncThunk(
     } else return currentApplication;
 
     try {
-      await fetch(
-        'http://127.0.0.1:4010/api/918.8516051839101/programs/et/application-form',
-        {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ data: newApplication })
-        }
-      );
+      await fetch(BASE_URL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data: newApplication })
+      });
       message.success('New question was added successfully', 3);
     } catch (ex) {
       message.error("Couldn't Add the new question", 3);
@@ -220,16 +215,13 @@ export const deleteQuestion = createAsyncThunk(
     } else return currentApplication;
 
     try {
-      await fetch(
-        'http://127.0.0.1:4010/api/918.8516051839101/programs/et/application-form',
-        {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ data: newApplication })
-        }
-      );
+      await fetch(BASE_URL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data: newApplication })
+      });
       message.success('New question was added successfully', 3);
     } catch (ex) {
       message.error("Couldn't Add the new question", 3);
