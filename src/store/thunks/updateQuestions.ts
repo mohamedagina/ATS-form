@@ -222,9 +222,9 @@ export const deleteQuestion = createAsyncThunk(
         },
         body: JSON.stringify({ data: newApplication })
       });
-      message.success('New question was added successfully', 3);
+      message.success('The question was deleted successfully', 3);
     } catch (ex) {
-      message.error("Couldn't Add the new question", 3);
+      message.error("Couldn't delete this question", 3);
     }
 
     return newApplication;
