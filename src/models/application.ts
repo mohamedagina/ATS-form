@@ -3,11 +3,22 @@ export type PersonalBasicQuestion = {
   show: boolean;
 };
 
+export type QuestionType =
+  | 'Paragraph'
+  | 'ShortAnswer'
+  | 'YesNo'
+  | 'Dropdown'
+  | 'MultipleChoice'
+  | 'Date'
+  | 'Number'
+  | 'FileUpload'
+  | 'VideoQuestion';
+
 export type AdditionalQuestion = {
   id: string;
-  type: string;
+  type: QuestionType;
   question: string;
-  choices?: string;
+  choices?: string[];
   maxChoice?: number;
   disqualify?: boolean;
   other?: boolean;

@@ -5,10 +5,6 @@
   padding: 1.5rem 0;
 }
 
-.info-summary:not(:first-child) {
-  border-top: 1px solid var(--clr-divider);
-}
-
 .info-summary label {
   font-size: 0.9375rem;
   font-weight: var(--font-weight-regular);
