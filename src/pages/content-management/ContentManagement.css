@@ -3,7 +3,7 @@
 }
 
 .tab-content {
-  display: flexbox;
+  display: flex;
   flex-direction: column;
   gap: 4rem;
   padding: 7rem 4rem 0 calc(var(--sidebar-width) + 4rem);
@@ -20,4 +20,23 @@
 }
 .information-panel {
   padding: 2.5rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .content-page {
+    padding-block-start: 4rem;
+  }
+  .tab-content {
+    padding-inline: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-content {
+    padding-inline: 1rem;
+  }
+
+  .information-panel {
+    padding: 1rem;
+  }
 }

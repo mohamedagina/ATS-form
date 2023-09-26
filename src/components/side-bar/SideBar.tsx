@@ -37,8 +37,9 @@ export const SideBar = () => {
   }, []);
 
   return (
-    <div className={`overlay-wrapper ${isExpanded ? 'expanded' : ''}`}>
-      <aside ref={sidebarEl} className="app-sidebar">
+    <>
+      <header className="mobile-header">
+        {' '}
         <Tooltip placement="right" title={isExpanded ? 'Collapse' : 'Expand'}>
           <button
             className="burger-btn"
@@ -47,29 +48,45 @@ export const SideBar = () => {
             <MenuOutlined />
           </button>
         </Tooltip>
+      </header>
 
-        <nav>
-          <ul className="nav-links">
-            {navLinks.map(link => (
-              <li key={link.title}>
-                <Tooltip placement="right" title={isExpanded ? '' : link.title}>
-                  <NavLink to={link.path}>
-                    {link.icon} {isExpanded && link.title}
-                  </NavLink>
-                </Tooltip>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <div className="user-identity">
-          <Tooltip placement="top" title={isExpanded ? '' : user.name}>
-            <span className="profile-picture">
-              {getImagePlaceholder(user.name)}
-            </span>
+      <div className={`overlay-wrapper ${isExpanded ? 'expanded' : ''}`}>
+        <aside ref={sidebarEl} className="app-sidebar">
+          <Tooltip placement="right" title={isExpanded ? 'Collapse' : 'Expand'}>
+            <button
+              className="burger-btn"
+              onClick={() => setIsExpanded(current => !current)}
+            >
+              <MenuOutlined />
+            </button>
           </Tooltip>
-          {isExpanded && user.name}
-        </div>
-      </aside>
-    </div>
+
+          <nav>
+            <ul className="nav-links">
+              {navLinks.map(link => (
+                <li key={link.title}>
+                  <Tooltip
+                    placement="right"
+                    title={isExpanded ? '' : link.title}
+                  >
+                    <NavLink to={link.path}>
+                      {link.icon} {isExpanded && link.title}
+                    </NavLink>
+                  </Tooltip>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="user-identity">
+            <Tooltip placement="top" title={isExpanded ? '' : user.name}>
+              <span className="profile-picture">
+                {getImagePlaceholder(user.name)}
+              </span>
+            </Tooltip>
+            {isExpanded && user.name}
+          </div>
+        </aside>
+      </div>
+    </>
   );
 };

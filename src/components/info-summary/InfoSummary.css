@@ -1,6 +1,7 @@
 .info-summary {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-transform: capitalize;
   padding: 1.5rem 0;
 }
@@ -23,4 +24,13 @@
   width: 6rem;
   cursor: pointer;
   color: var(--clr-text-secondary);
+}
+
+@media (max-width: 480px) {
+  .info-options {
+    gap: 0.5rem;
+  }
+  .info-summary label {
+    font-size: 0.875rem;
+  }
 }

@@ -114,3 +114,23 @@ ul {
 .separate-children > :not(:first-child, :last-child) {
   border-top: 1px solid var(--clr-divider);
 }
+
+@media (max-width: 950px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 580px) {
+  body {
+    font-size: 0.875rem;
+  }
+
+  .text-btn {
+    font-size: 0.875rem;
+  }
+
+  .text-btn .anticon {
+    font-size: 1rem;
+  }
+}

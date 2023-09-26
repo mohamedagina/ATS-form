@@ -1,6 +1,5 @@
 .tabs-list {
   display: flex;
-  align-items: center;
   justify-content: center;
   margin-inline-start: var(--sidebar-width);
   box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
@@ -9,11 +8,13 @@
 }
 
 .tabs-list > li {
+  display: flex;
   position: relative;
   flex: 1;
 }
 
 .tab-link {
+  flex: 1;
   position: relative;
   display: grid;
   place-items: center;
@@ -62,4 +63,25 @@
 
 .tabs-list li:last-child .tab-link::before {
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .tabs-list {
+    margin-inline-start: 0;
+  }
+
+  .tab-link {
+    font-size: 0.875rem;
+    padding: 2.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .tab-link {
+    font-size: 0.75rem;
+  }
+
+  .tab-link.active::after {
+    border-width: 0.875rem 0 0.875rem 0.875rem;
+  }
 }

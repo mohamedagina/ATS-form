@@ -53,3 +53,10 @@
   width: 100%;
   aspect-ratio: 16/9;
 }
+
+@media (max-width: 480px) {
+  .cover-upload {
+    padding: 2.5rem;
+    margin: 3rem 1.5rem;
+  }
+}
