@@ -2,19 +2,26 @@ import { useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 
-import { Tabs, CoverUpload, Panel, InfoSummary } from '../../components';
+import {
+  Tabs,
+  CoverUpload,
+  Panel,
+  InfoSummary,
+  QuestionForm
+} from '../../components';
 import './ContentManagement.css';
 import { SummaryOptions } from '../../models';
+import { QuestionSummary } from '../../components';
 
 const ApplicationForm = () => {
-  const { personalInformation, profile } = useSelector(
+  const { personalInformation, profile, customisedQuestions } = useSelector(
     (state: RootState) => state.application.data.attributes
   );
   return (
     <div className="application-form">
       <CoverUpload />
       <Panel title="Personal Information">
-        <div className="information-panel">
+        <div className="information-panel separate-children">
           {Object.keys(personalInformation).map(
             infoTitle =>
               infoTitle !== 'personalQuestions' && (
@@ -30,11 +37,23 @@ const ApplicationForm = () => {
                 />
               )
           )}
+
+          {personalInformation.personalQuestions.map(
+            (question, i) =>
+              !!i && (
+                <QuestionSummary
+                  key={question.id || i}
+                  question={question}
+                  category="personalInformation"
+                />
+              )
+          )}
+          <QuestionForm category="personalInformation" />
         </div>
       </Panel>
 
       <Panel title="Profile Information">
-        <div className="information-panel">
+        <div className="information-panel separate-children">
           {Object.keys(profile).map(
             infoTitle =>
               infoTitle !== 'profileQuestions' && (
@@ -48,8 +67,38 @@ const ApplicationForm = () => {
                 />
               )
           )}
+
+          {profile.profileQuestions.map(
+            (question, i) =>
+              !!i && (
+                <QuestionSummary
+                  key={question.id || i}
+                  question={question}
+                  category="profile"
+                />
+              )
+          )}
+          <QuestionForm category="profile" />
         </div>
       </Panel>
+
+      {
+        <Panel title="Additional questions">
+          <div className="information-panel separate-children">
+            {customisedQuestions.map(
+              (question, i) =>
+                !!i && (
+                  <QuestionSummary
+                    key={question.id || i}
+                    question={question}
+                    category="customisedQuestions"
+                  />
+                )
+            )}
+            <QuestionForm category="customisedQuestions" />
+          </div>
+        </Panel>
+      }
     </div>
   );
 };

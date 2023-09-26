@@ -73,6 +73,33 @@ ul {
   border: none;
 }
 
+.danger {
+  color: var(--clr-danger);
+}
+
+.text-btn {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  font-size: 0.9375rem;
+  border: none;
+  background-color: transparent;
+}
+
+.text-btn .anticon {
+  font-size: 1.5rem;
+}
+
+.submit-btn {
+  background-color: var(--clr-success);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+}
+
 .ant-switch {
   transform: scaleX(-1);
   border: 1px solid var(--clr-disabled);
@@ -82,4 +109,8 @@ ul {
 
 .ant-switch:not(.ant-switch-disabled):hover {
   background-color: var(--clr-divider);
+}
+
+.separate-children > :not(:first-child, :last-child) {
+  border-top: 1px solid var(--clr-divider);
 }
