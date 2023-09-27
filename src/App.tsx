@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { SideBar } from './components';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { ContentManagement } from './pages';
+import { ContentManagement, UnderConstruction } from './pages';
 
 import { useDispatch } from 'react-redux';
 import { fetchApplication } from './store';
@@ -27,6 +27,7 @@ function App() {
       <SideBar />
       <Routes>
         <Route path="/" element={<ContentManagement />} />
+        <Route path="*" element={<UnderConstruction />} />
       </Routes>
     </ConfigProvider>
   );
